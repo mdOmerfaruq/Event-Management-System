@@ -1,0 +1,18 @@
+digraph {
+	Start [label=Start shape=oval]
+	Input [label="Input: Integer from User" shape=parallelogram]
+	Loop [label="For i = 2 to sqrt(N)" shape=diamond]
+	Check [label="Is N % i == 0?" shape=diamond]
+	"Not Prime" [label="NOT PRIME
+End" shape=oval]
+	Next [label="Next i" shape=rectangle]
+	Prime [label="PRIME
+End" shape=oval]
+	Start -> Input
+	Input -> Loop
+	Loop -> Check [label="i <= sqrt(N)"]
+	Check -> "Not Prime" [label=Yes]
+	Check -> Next [label=No]
+	Next -> Loop
+	Loop -> Prime [label="No divisors found"]
+}
